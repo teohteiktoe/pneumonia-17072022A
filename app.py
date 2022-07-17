@@ -21,7 +21,7 @@ def init():
         filename = secure_filename(file.filename)
         print(filename)
         # Open the image form working directory
-        image = Image.open(filename)
+        image = Image.open(file)
         #file.save(filename) #Heroku no need static
         #file = open(filename,"r") #Heroku no need static
         model = load_model("Pneumonia")
