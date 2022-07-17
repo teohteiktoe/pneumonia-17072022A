@@ -25,8 +25,8 @@ def upload_file():
         print("File Received")
         filename = secure_filename(file.filename)
         print(filename)
-        file.save(filename) #Heroku no need static
-        file = open(filename,"r") #Heroku no need static
+        file.save(app.config(filename)) #Heroku no need static
+        file = open(app.config(filename,"r")) #Heroku no need static
         model = load_model("Pneumonia")
         image = cv2.imread(filename)
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
