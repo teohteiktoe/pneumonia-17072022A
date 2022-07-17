@@ -25,7 +25,7 @@ def init():
         #file.save(filename) #Heroku no need static
         #file = open(filename,"r") #Heroku no need static
         model = load_model("Pneumonia")
-        data = np.asarray(image)
+        img = np.asarray(image)
         #image = cv2.imread(filename)
         #gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         #img = cv2.merge([gray,gray,gray])
