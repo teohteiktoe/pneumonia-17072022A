@@ -28,7 +28,7 @@ def upload_file():
         file.save(app.config(filename)) #Heroku no need static
         file = open(app.config(filename,"r")) #Heroku no need static
         model = load_model("Pneumonia")
-        image = cv2.imread(filename)
+        image = cv2.imread(app.config(filename))
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         img = cv2.merge([gray,gray,gray])
         img.resize((150,150,3))
