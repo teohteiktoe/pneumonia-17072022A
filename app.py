@@ -5,17 +5,17 @@
 
 
 from flask import Flask, render_template, request
-from werkzeug.utils import secure_filename
-from skimage import io
-from keras.models import load_model
+#from werkzeug.utils import secure_filename
+#from skimage import io
+#from keras.models import load_model
 #import cv2
-from PIL import Image #use PIL
-import numpy as np
+#from PIL import Image #use PIL
+#import numpy as np
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
-def upload_file():
+def init():
     if request.method == 'POST':
 #         file = request.files['file']
 #         print("File Received")
@@ -32,7 +32,7 @@ def upload_file():
 #         img = img.reshape(1, img.shape[0], img.shape[1], img.shape[2]) #rgb to reshape to 1,100,100,3
 #         pred=model.predict(img)
         pred = "YES"
-        return(render_template("index.html", result=str(pred)))
+        return(render_template("index.html", result="YES"))
     else:
         return(render_template("index.html", result="WAITING"))
 if __name__ == "__main__":
