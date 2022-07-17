@@ -5,20 +5,20 @@
 
 
 from flask import Flask, render_template, request
-#from werkzeug.utils import secure_filename
+from werkzeug.utils import secure_filename
 #from skimage import io
-#from keras.models import load_model
+from keras.models import load_model
 #import cv2
-#from PIL import Image #use PIL
-#import numpy as np
+from PIL import Image #use PIL
+import numpy as np
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def init():
     if request.method == 'POST':
-#         file = request.files['file']
-#         print("File Received")
+        file = request.files['file']
+        print("File Received")
 #         filename = secure_filename(file.filename)
 #         print(filename)
 #         file.save(filename) #Heroku no need static
