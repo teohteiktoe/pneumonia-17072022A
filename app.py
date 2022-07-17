@@ -17,13 +17,13 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        file = request.files['file']
-        print("File Received")
-        filename = secure_filename(file.filename)
-        print(filename)
-        file.save(filename) #Heroku no need static
-        file = open(filename,"r") #Heroku no need static
-        model = load_model("Pneumonia")
+#         file = request.files['file']
+#         print("File Received")
+#         filename = secure_filename(file.filename)
+#         print(filename)
+#         file.save(filename) #Heroku no need static
+#         file = open(filename,"r") #Heroku no need static
+#         model = load_model("Pneumonia")
 #         image = cv2.imread(filename)
 #         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 #         img = cv2.merge([gray,gray,gray])
